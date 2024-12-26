@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard</title>
+    <link rel="icon" type="image/x-icon" href="{{ url_for('static', filename='images/team_connect_logo.JPG') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<style>
+    .nav-brand a {
+    text-decoration: none;
+}
+
+</style>
+
+<body>
+    <div class="dashboard-container">
+        <nav class="dashboard-nav">
+            <div class="nav-brand">
+                <a class="MV3Tnb" href="{{ url_for('dashboard') }}">
+                    <i class="fas fa-cube"></i>
+                    <span>Dashboard</span>
+                </a>
+            </div>
+            <div class="nav-user">
+                <span>Welcome, {{ username }}!</span>
+                <a href="{{ url_for('logout') }}" class="logout-btn">
+                    <i class="fas fa-sign-out-alt"></i>
+                    Logout
+                </a>
+            </div>
+        </nav>
+        <div class="dashboard-content">
+            <div class="welcome-card">
+                <div class="welcome-icon">
+                    <i class="fas fa-user-circle"></i>
+                </div>
+                <h2>Welcome to Your Dashboard {{username}}</h2>
+                
+            </div>
+            
+            <div class="stats-container">
+                <div class="stat-card">
+                    <i class="fa-solid fa-video"></i><br>
+                    <h3>Video Conference</h3>
+                    <br><br>
+                    <a href="{{ url_for('meeting') }}">
+                        <button type="button" class="btn btn-link">Create Meeting</button>
+                    </a>
+                     
+                    <br><br>
+                    <a href="{{ url_for('join') }}">
+                        <button type="button" class="btn btn-link">Join Meeting</button>
+                    </a>
+                </div>
+                
+                <div class="stat-card">
+                    <i class='fas fa-comments'></i>
+                    <h3>Chat</h3>
+                    <p>Chat Rooms</p>
+                    <br><br>
+                    <a href="{{ url_for('home') }}">
+                        <button type="button" class="btn btn-link">Enter Chat Rooms</button>
+                    </a>
+                </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
